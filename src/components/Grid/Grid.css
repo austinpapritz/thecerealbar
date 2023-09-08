@@ -1,0 +1,17 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 16px;
+  }
+  
+  .cell {
+    width: 100px;
+    height: 100px;
+    border: 1px solid gray;
+  }
+  
+  .active {
+    border: 1px solid black;
+  }
+  

@@ -1,8 +1,25 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './Grid.css';
 
 function Grid() {
 const [bowlPosition, setBowlPosition] = useState(1);
+
+useEffect(() => {
+    const handleKeyPress = (e) => {
+      if (e.key === 'ArrowLeft' && bowlPosition > 0) {
+        setBowlPosition(bowlPosition - 1);
+      } else if (e.key === 'ArrowRight' && bowlPosition < 2) {
+        setBowlPosition(bowlPosition + 1);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyPress);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyPress);
+    };
+  }, [bowlPosition]);
+
   return (
     <div className="grid">
       {/* TOP ROW (cereal boxes) */}

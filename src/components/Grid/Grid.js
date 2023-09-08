@@ -23,14 +23,14 @@ useEffect(() => {
   return (
     <div className="grid">
       {/* TOP ROW (cereal boxes) */}
-      <div className="cell"></div>
-      <div className="cell"></div>
-      <div className="cell"></div>
+      <div className="cell blue"></div>
+      <div className="cell red"></div>
+      <div className="cell green"></div>
 
       {/* MIDDLE ROW (arrow indicator) */}
-      <div className="cell"></div>
-      <div className="cell"></div>
-      <div className="cell"></div>
+      <div className={bowlPosition === 0 ? 'cell indicator' : 'cell'}></div>
+      <div className={bowlPosition === 1 ? 'cell indicator' : 'cell'}></div>
+      <div className={bowlPosition === 2 ? 'cell indicator' : 'cell'}></div>
 
       {/* BOTTOM ROW (user bowl) */}
       <div className={bowlPosition === 0 ? 'cell active' : 'cell'}></div>

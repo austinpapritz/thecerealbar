@@ -3,18 +3,33 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     gap: 16px;
-  }
-  
-  .cell {
-    width: 100px;
-    height: 100px;
-    border: 1px solid gray;
-  }
-  
-  .active {
-    border-top: none;
-    border-left: 3px solid black;
-    border-right: 3px solid black;
-    border-bottom: 3px solid black;
-  }
-  
+}
+
+.cell {
+width: 100px;
+height: 100px;
+}
+
+.active {
+border-top: none;
+border-left: 3px solid black;
+border-right: 3px solid black;
+border-bottom: 3px solid black;
+}
+
+.indicator::before {
+    content: '⬇️';
+    display: inline-block;
+}
+
+.red {
+    background: rgba(200, 44, 44, 0.998);
+}
+
+.green {
+    background: rgba(44, 200, 101, 0.998);
+}
+
+.blue {
+    background: rgba(44, 127, 200, 0.998);
+}

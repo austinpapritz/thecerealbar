@@ -4,15 +4,15 @@ import './Grid.css';
 function Grid() {
 const [bowlPosition, setBowlPosition] = useState(1);
 const [cerealBoxes, setCerealBoxes] = useState([
-    { cereal: 'red', amount: 100 },
     { cereal: 'blue', amount: 100 },
+    { cereal: 'red', amount: 100 },
     { cereal: 'green', amount: 100 },
-  ]);
-  const [bowl, setBowl] = useState([
-    { cereal: 'red', amount: 0 },
+    ]);
+const [bowl, setBowl] = useState([
     { cereal: 'blue', amount: 0 },
+    { cereal: 'red', amount: 0 },
     { cereal: 'green', amount: 0 }
-  ]);
+    ]);
 
 
 useEffect(() => {
@@ -30,6 +30,7 @@ useEffect(() => {
       window.removeEventListener('keydown', handleKeyPress);
     };
   }, [bowlPosition]);
+
 
   return (
     <div className="grid">

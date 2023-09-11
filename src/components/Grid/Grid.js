@@ -10,7 +10,11 @@ const [cerealBoxes, setCerealBoxes] = useState([
     { cereal: 'red', amount: 100 },
     { cereal: 'green', amount: 100 },
     ]);
-const [bowl, setBowl] = useState([]);
+const [bowl, setBowl] = useState([
+    { cereal: 'blue', amount: 0 },
+    { cereal: 'red', amount: 0 },
+    { cereal: 'green', amount: 0 },
+    ]);
 
 
 useEffect(() => {

@@ -84,7 +84,7 @@ function Grid() {
             <div className={bowlPosition === 2 ? 'cell indicator' : 'cell'}></div>
 
             {/* BOTTOM ROW (user bowl) */}
-            <UserBowl className="bowl" bowl={bowl} style={{ gridColumnStart: bowlPosition, gridRowStart: 3}}/>
+            <UserBowl className="bowl" bowl={bowl} style={{ gridColumnStart: bowlPosition}}/>
 
 
         </div>

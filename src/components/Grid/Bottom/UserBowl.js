@@ -1,6 +1,6 @@
 import './UserBowl.css';
 
-const UserBowl = ({ bowl, className }) => {
+const UserBowl = ({ bowl, className, style }) => {
     const buildBowlBackground = () => {
         let gradients = [];
         let start = 0;
@@ -21,7 +21,7 @@ const UserBowl = ({ bowl, className }) => {
     };
 
 
-    return <div className={`bowl ${className}`} style={{ background: buildBowlBackground() }}></div>;
+    return <div className={`bowl ${className}`} style={{...style, background: buildBowlBackground() }}></div>;
 };
 
 export default UserBowl;

@@ -11,8 +11,6 @@
 }
 
 .bowl {
-    grid-row-start: 3;
-
     border-top: none;
     border-left: 3px solid black;
     border-right: 3px solid black;

@@ -1,4 +1,6 @@
-const UserBowl = ({ bowl }) => {
+import './UserBowl.css';
+
+const UserBowl = ({ bowl, className }) => {
     const buildBowlBackground = () => {
       let gradients = '';
       let start = 0;
@@ -12,7 +14,7 @@ const UserBowl = ({ bowl }) => {
       return `linear-gradient(to top${gradients})`;
     };
   
-    return <div className="bowl" style={{ background: buildBowlBackground() }}></div>;
+    return <div className={`bowl ${className}`} style={{ background: buildBowlBackground() }}></div>;
   };
 
 export default UserBowl;

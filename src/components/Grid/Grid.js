@@ -40,7 +40,6 @@ const transferCereal = () => {
     // Get the cereal box above the current bowl position
     const currentBox = cerealBoxes[bowlPosition];
   
-    // Decide on a transfer rate
     const transferRate = 10;
   
     // Check if the bowl already has this type of cereal
@@ -58,7 +57,7 @@ const transferCereal = () => {
   
       // Update the bowl
       if (existingCerealInBowl) {
-        // Add to the existing amount in the bowl
+        // Add to the existing amount in the bowl, if there
         setBowl(prevState => prevState.map(c => {
           if (c.color === currentBox.color) {
             return { ...c, amount: c.amount + transferRate };
@@ -66,14 +65,12 @@ const transferCereal = () => {
           return c;
         }));
       } else {
-        // Add new cereal type to the bowl
+        // Add new cereal type to the bowl if not already there
         setBowl(prevState => [...prevState, { color: currentBox.color, amount: transferRate }]);
       }
     }
   };
   
-
-
   return (
     <div className="grid">
         {/* TOP ROW (cereal boxes) */}
@@ -87,7 +84,10 @@ const transferCereal = () => {
         <div className={bowlPosition === 2 ? 'cell indicator' : 'cell'}></div>
 
         {/* BOTTOM ROW (user bowl) */}
-        <UserBowl bowl={bowl} />
+        <UserBowl className={bowlPosition === 0 ? 'active' : ''} bowl={bowl} />
+        <UserBowl className={bowlPosition === 1 ? 'active' : ''} bowl={bowl} />
+        <UserBowl className={bowlPosition === 2 ? 'active' : ''} bowl={bowl} />
+
     </div>
   );
 }

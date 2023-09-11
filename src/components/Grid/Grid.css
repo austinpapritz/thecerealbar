@@ -10,15 +10,7 @@
     display: inline-block;
 }
 
-.red {
-    background: rgba(200, 44, 44, 0.998);
+.cell {
+    width: 200px;
+    height: 200px;
 }
-
-.green {
-    background: rgba(44, 200, 101, 0.998);
-}
-
-.blue {
-    background: rgba(44, 127, 200, 0.998);
-}
-

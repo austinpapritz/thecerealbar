@@ -6,14 +6,14 @@ import './Grid.css';
 function Grid() {
     const [bowlPosition, setBowlPosition] = useState(2);
     const [cerealBoxes, setCerealBoxes] = useState([
-        { cereal: 'blue', amount: 100 },
-        { cereal: 'red', amount: 100 },
-        { cereal: 'green', amount: 100 },
+        { cereal: 'rgba(44, 127, 200, 0.998)', amount: 100 },
+        { cereal: 'rgba(200, 44, 44, 0.998)', amount: 100 },
+        { cereal: 'rgba(44, 200, 101, 0.998)', amount: 100 },
     ]);
     const [bowl, setBowl] = useState([
-        { cereal: 'blue', amount: 0 },
-        { cereal: 'red', amount: 0 },
-        { cereal: 'green', amount: 0 },
+        { cereal: 'rgba(44, 127, 200, 0.998)', amount: 0 },
+        { cereal: 'rgba(200, 44, 44, 0.998)', amount: 0 },
+        { cereal: 'rgba(44, 200, 101, 0.998)', amount: 0 },
     ]);
 
 
@@ -75,7 +75,7 @@ function Grid() {
         <div className="grid">
             {/* TOP ROW (cereal boxes) */}
             {cerealBoxes.map((box, index) => {
-                return <CerealBox key={index} color={box.cereal} amount={box.amount} />
+                return <CerealBox className="cell" key={index} color={box.cereal} amount={box.amount} />
             })}
 
             {/* MIDDLE ROW (arrow indicator) */}
@@ -83,8 +83,6 @@ function Grid() {
 
             {/* BOTTOM ROW (user bowl) */}
             <UserBowl className="bowl cell" bowl={bowl} style={{ gridColumnStart: bowlPosition}}/>
-
-
         </div>
     );
 }

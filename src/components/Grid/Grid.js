@@ -4,7 +4,7 @@ import CerealBox from './Top/CerealBox.js';
 import './Grid.css';
 
 function Grid() {
-    const [bowlPosition, setBowlPosition] = useState(1);
+    const [bowlPosition, setBowlPosition] = useState(2);
     const [cerealBoxes, setCerealBoxes] = useState([
         { cereal: 'blue', amount: 100 },
         { cereal: 'red', amount: 100 },
@@ -19,9 +19,9 @@ function Grid() {
 
     useEffect(() => {
         const handleKeyPress = (e) => {
-            if (e.key === 'ArrowLeft' && bowlPosition > 0) {
+            if (e.key === 'ArrowLeft' && bowlPosition > 1) {
                 setBowlPosition(bowlPosition - 1);
-            } else if (e.key === 'ArrowRight' && bowlPosition < 2) {
+            } else if (e.key === 'ArrowRight' && bowlPosition < 3) {
                 setBowlPosition(bowlPosition + 1);
             } else if (e.key === 'ArrowDown') {
                 transferCereal();
@@ -79,9 +79,9 @@ function Grid() {
             })}
 
             {/* MIDDLE ROW (arrow indicator) */}
-            <div className={bowlPosition === 0 ? 'cell indicator' : 'cell'}></div>
-            <div className={bowlPosition === 1 ? 'cell indicator' : 'cell'}></div>
-            <div className={bowlPosition === 2 ? 'cell indicator' : 'cell'}></div>
+            <div className="indicator" style={{ gridColumnStart: bowlPosition}}></div>
+            {/* <div className={bowlPosition === 1 ? 'cell indicator' : 'cell'}></div>
+            <div className={bowlPosition === 2 ? 'cell indicator' : 'cell'}></div> */}
 
             {/* BOTTOM ROW (user bowl) */}
             <UserBowl className="bowl" bowl={bowl} style={{ gridColumnStart: bowlPosition}}/>

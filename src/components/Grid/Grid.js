@@ -79,12 +79,10 @@ function Grid() {
             })}
 
             {/* MIDDLE ROW (arrow indicator) */}
-            <div className="indicator" style={{ gridColumnStart: bowlPosition}}></div>
-            {/* <div className={bowlPosition === 1 ? 'cell indicator' : 'cell'}></div>
-            <div className={bowlPosition === 2 ? 'cell indicator' : 'cell'}></div> */}
+            <div className="indicator cell" style={{ gridColumnStart: bowlPosition}}></div>
 
             {/* BOTTOM ROW (user bowl) */}
-            <UserBowl className="bowl" bowl={bowl} style={{ gridColumnStart: bowlPosition}}/>
+            <UserBowl className="bowl cell" bowl={bowl} style={{ gridColumnStart: bowlPosition}}/>
 
 
         </div>

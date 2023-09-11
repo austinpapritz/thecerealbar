@@ -1,7 +1,9 @@
-const CerealBox = ({ color, amount }) => {
+import './CerealBox.css';
+
+const CerealBox = ({ color, amount, className }) => {
     return (
         <div
-            className="cereal-box"
+            className={`${className}`}
             style={{
                 background: `linear-gradient(to top, ${color}, ${color} ${amount}%, transparent ${amount}%, transparent)`
             }}

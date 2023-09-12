@@ -1,7 +1,6 @@
 import './CerealBox.css';
 
 const CerealBox = ({ color, amount, className }) => {
-    console.log('className', className)
     return (
         <div
             className={`${className}`}

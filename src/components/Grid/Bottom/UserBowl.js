@@ -8,7 +8,7 @@ const UserBowl = ({ bowl, className, style }) => {
         bowl.forEach(cereal => {
             const end = start + cereal.amount;
             if (cereal.amount > 0) {
-                gradients.push(`${cereal.cereal} ${start}%, ${cereal.cereal} ${end}%`);
+                gradients.push(`${cereal.name} ${start}%, ${cereal.name} ${end}%`);
             }
             start = end;
         });

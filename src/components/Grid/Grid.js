@@ -6,14 +6,14 @@ import './Grid.css';
 function Grid() {
     const [bowlPosition, setBowlPosition] = useState(2);
     const [cerealBoxes, setCerealBoxes] = useState([
-        { cereal: 'rgba(44, 127, 200, 0.998)', amount: 100 },
-        { cereal: 'rgba(200, 44, 44, 0.998)', amount: 100 },
-        { cereal: 'rgba(44, 200, 101, 0.998)', amount: 100 },
+        { name: 'rgba(44, 127, 200, 0.998)', amount: 100 },
+        { name: 'rgba(200, 44, 44, 0.998)', amount: 100 },
+        { name: 'rgba(44, 200, 101, 0.998)', amount: 100 },
     ]);
     const [bowl, setBowl] = useState([
-        { cereal: 'rgba(44, 127, 200, 0.998)', amount: 0 },
-        { cereal: 'rgba(200, 44, 44, 0.998)', amount: 0 },
-        { cereal: 'rgba(44, 200, 101, 0.998)', amount: 0 },
+        { name: 'rgba(44, 127, 200, 0.998)', amount: 0 },
+        { name: 'rgba(200, 44, 44, 0.998)', amount: 0 },
+        { name: 'rgba(44, 200, 101, 0.998)', amount: 0 },
     ]);
 
 
@@ -38,18 +38,18 @@ function Grid() {
     // On down arrow press
     const transferCereal = () => {
         // Get the cereal box above the current bowl position
-        const currentBox = cerealBoxes[bowlPosition];
+        const currentBox = cerealBoxes[bowlPosition - 1];
 
         const transferRate = 10;
 
         // Check if the bowl already has this type of cereal
-        const existingCerealInBowl = bowl.find(c => c.color === currentBox.color);
+        const existingCerealInBowl = bowl.find(c => c.name === currentBox.name);
 
         // Transfer cereal from box to bowl
         if (currentBox.amount >= transferRate) {
             // Update the cereal box amount
             setCerealBoxes(prevState => prevState.map((box, index) => {
-                if (index === bowlPosition) {
+                if (index === bowlPosition - 1) {
                     return { ...box, amount: box.amount - transferRate };
                 }
                 return box;
@@ -59,7 +59,7 @@ function Grid() {
             if (existingCerealInBowl) {
                 // Add to the existing amount in the bowl, if there
                 setBowl(prevState => prevState.map(c => {
-                    if (c.color === currentBox.color) {
+                    if (c.name === currentBox.name) {
                         return { ...c, amount: c.amount + transferRate };
                     }
                     return c;
@@ -75,7 +75,7 @@ function Grid() {
         <div className="grid">
             {/* TOP ROW (cereal boxes) */}
             {cerealBoxes.map((box, index) => {
-                return <CerealBox className="cell" key={index} color={box.cereal} amount={box.amount} />
+                return <CerealBox className="cell" key={index} color={box.name} amount={box.amount} />
             })}
 
             {/* MIDDLE ROW (arrow indicator) */}

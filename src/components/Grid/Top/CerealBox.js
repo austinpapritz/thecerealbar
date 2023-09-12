@@ -1,4 +1,4 @@
-import './CerealBox.css';
+import './Top.css';
 
 const CerealBox = ({ color, amount, className }) => {
     return (

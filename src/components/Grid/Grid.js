@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import UserBowl from './Bottom/UserBowl.js';
 import CerealBox from './Top/CerealBox.js';
 import './Grid.css';
+import Scoreboard from './Top/Scoreboard.js';
 
 function Grid() {
     const [bowlPosition, setBowlPosition] = useState(2);
@@ -74,12 +75,12 @@ function Grid() {
 
     return (
         <div className="grid">
-            <div>Use the arrow keys</div>
             {/* TOP ROW (cereal boxes) */}
+            <div>Use the arrow keys</div>
             {cerealBoxes.map((box, index) => {
                 return <CerealBox className="cereal-cell" key={index} color={box.name} amount={box.amount} />
             })}
-            <div className="scoreboard-cell">SCOREBOARD</div>
+            <Scoreboard />
 
             {/* MIDDLE ROW (arrow indicator) */}
             <div className="indicator indicator-cell" style={{ gridColumnStart: bowlPosition + 1, gridRowStart: 2}}></div>

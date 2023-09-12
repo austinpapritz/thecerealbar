@@ -6,14 +6,14 @@ const UserBowl = ({ bowl, className, style }) => {
         let start = 0;
         
         bowl.forEach(cereal => {
-            // Construct gradient from the amount of each cereal in the bowl
             const end = start + cereal.amount;
 
+            // Construct gradient from the amount of each cereal in the bowl
             if (cereal.amount > 0) {
                 gradients.push(`${cereal.name} ${start}%, ${cereal.name} ${end}%`);
             }
+
             start = end;
-            
         });
 
         if (gradients.length === 0) {

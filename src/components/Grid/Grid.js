@@ -39,14 +39,15 @@ function Grid() {
     const transferCereal = () => {
         // Get the cereal box above the current bowl position
         const currentBox = cerealBoxes[bowlPosition - 1];
+        const currentBowlLevel = bowl.reduce((acc, c) => acc + c.amount, 0);
 
         const transferRate = 10;
 
         // Check if the bowl already has this type of cereal
         const existingCerealInBowl = bowl.find(c => c.name === currentBox.name);
 
-        // Transfer cereal from box to bowl
-        if (currentBox.amount >= transferRate) {
+        // If there is enough cereal in the box and the bowl isn't full, transfer cereal from box to bowl
+        if (currentBox.amount >= transferRate && currentBowlLevel < 100) {
             // Update the cereal box amount
             setCerealBoxes(prevState => prevState.map((box, index) => {
                 if (index === bowlPosition - 1) {

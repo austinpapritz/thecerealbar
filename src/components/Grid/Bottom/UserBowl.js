@@ -17,7 +17,11 @@ const UserBowl = ({ bowl, className, style }) => {
             return "transparent";
         }
 
-        return `linear-gradient(to top, ${gradients.join(", ")})`;
+        gradients.push(`transparent ${start}%, transparent 100%`);
+        
+        const css = `linear-gradient(to top, ${gradients.join(", ")})`;
+        console.log('css', css)
+        return css;
     };
 
 

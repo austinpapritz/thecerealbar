@@ -1,8 +1,11 @@
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: 500px, 20px, 200px;
     gap: 16px;
+    justify-items: center;
+    align-items: center;
+    
 }
 
 .indicator::before {
@@ -10,7 +13,7 @@
     display: inline-block;
 }
 
-.cell {
-    width: 200px;
-    height: 200px;
+.indicator-cell {
+    width: 200;
+    height: 20px;
 }

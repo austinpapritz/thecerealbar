@@ -75,14 +75,14 @@ function Grid() {
         <div className="grid">
             {/* TOP ROW (cereal boxes) */}
             {cerealBoxes.map((box, index) => {
-                return <CerealBox className="cell" key={index} color={box.name} amount={box.amount} />
+                return <CerealBox className="cereal-cell" key={index} color={box.name} amount={box.amount} />
             })}
 
             {/* MIDDLE ROW (arrow indicator) */}
-            <div className="indicator cell" style={{ gridColumnStart: bowlPosition}}></div>
+            <div className="indicator indicator-cell" style={{ gridColumnStart: bowlPosition}}></div>
 
             {/* BOTTOM ROW (user bowl) */}
-            <UserBowl className="bowl cell" bowl={bowl} style={{ gridColumnStart: bowlPosition}}/>
+            <UserBowl className="bowl bowl-cell" bowl={bowl} style={{ gridColumnStart: bowlPosition}}/>
         </div>
     );
 }

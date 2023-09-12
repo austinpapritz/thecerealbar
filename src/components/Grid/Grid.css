@@ -1,7 +1,7 @@
 .grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 500px, 20px, 200px;
+    grid-template-columns: 200px 200px 200px 200px 200px;
+    grid-template-rows: 500px 20px 200px;
     gap: 16px;
     justify-items: center;
     align-items: center;
@@ -16,4 +16,14 @@
 .indicator-cell {
     width: 200;
     height: 20px;
+}
+
+.left-arrow {
+    grid-row: 3;
+    grid-column: 1;
+}
+
+.right-arrow {
+    grid-row: 3;
+    grid-column: 5;
 }

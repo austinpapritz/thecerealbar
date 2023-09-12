@@ -74,16 +74,21 @@ function Grid() {
 
     return (
         <div className="grid">
+            <div>Use the arrow keys</div>
             {/* TOP ROW (cereal boxes) */}
             {cerealBoxes.map((box, index) => {
                 return <CerealBox className="cereal-cell" key={index} color={box.name} amount={box.amount} />
             })}
+            <div className="scoreboard-cell">SCOREBOARD</div>
 
             {/* MIDDLE ROW (arrow indicator) */}
-            <div className="indicator indicator-cell" style={{ gridColumnStart: bowlPosition}}></div>
+            <div className="indicator indicator-cell" style={{ gridColumnStart: bowlPosition + 1, gridRowStart: 2}}></div>
 
-            {/* BOTTOM ROW (user bowl) */}
-            <UserBowl className="bowl bowl-cell" bowl={bowl} style={{ gridColumnStart: bowlPosition}}/>
+
+            {/* BOTTOM ROW (user bowl and arrows) */}
+            <div className="left-arrow">⬅️</div>
+            <UserBowl className="bowl bowl-cell" bowl={bowl} style={{ gridColumnStart: bowlPosition + 1, gridRowStart: 3}}/>
+            <div className="right-arrow">➡️</div>
         </div>
     );
 }

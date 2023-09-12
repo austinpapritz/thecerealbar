@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import UserBowl from './Bottom/UserBowl.js';
 import CerealBox from './Top/CerealBox.js';
 import './Grid.css';
-import Scoreboard from './Top/Scoreboard.js';
+import Tracker from './Top/Tracker.js';
 
 function Grid() {
     const [bowlPosition, setBowlPosition] = useState(2);
@@ -78,17 +78,17 @@ function Grid() {
             {/* TOP ROW (cereal boxes) */}
             <div>Use the arrow keys</div>
             {cerealBoxes.map((box, index) => {
-                return <CerealBox className="cereal-cell" key={index} color={box.name} amount={box.amount} />
+                return <CerealBox className="cereal-cell" key={ index } color={ box.name } amount={ box.amount } />
             })}
-            <Scoreboard />
+            <Tracker bowl={ bowl }/>
 
             {/* MIDDLE ROW (arrow indicator) */}
-            <div className="indicator indicator-cell" style={{ gridColumnStart: bowlPosition + 1, gridRowStart: 2}}></div>
+            <div className="indicator indicator-cell" style={{ gridColumnStart: bowlPosition + 1, gridRowStart: 2 }}></div>
 
 
             {/* BOTTOM ROW (user bowl and arrows) */}
             <div className="left-arrow">⬅️</div>
-            <UserBowl className="bowl bowl-cell" bowl={bowl} style={{ gridColumnStart: bowlPosition + 1, gridRowStart: 3}}/>
+            <UserBowl className="bowl bowl-cell" bowl={ bowl } style={{ gridColumnStart: bowlPosition + 1, gridRowStart: 3 }}/>
             <div className="right-arrow">➡️</div>
         </div>
     );

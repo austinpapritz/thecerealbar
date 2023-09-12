@@ -30,7 +30,7 @@ const UserBowl = ({ bowl, className, style }) => {
     };
 
 
-    return <div className={`${className}`} style={{...style, background: buildBowlBackground() }}></div>;
+    return <div className={`${className}`} style={{ ...style, background: buildBowlBackground() }}></div>;
 };
 
 export default UserBowl;

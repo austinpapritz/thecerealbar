@@ -82,11 +82,11 @@ function Grid() {
             })}
             <Tracker bowl={ bowl }/>
 
-            {/* MIDDLE ROW (arrow indicator) */}
+            {/* MIDDLE ROW (down arrow indicator) */}
             <div className="indicator indicator-cell" style={{ gridColumnStart: bowlPosition + 1, gridRowStart: 2 }}></div>
 
 
-            {/* BOTTOM ROW (user bowl and arrows) */}
+            {/* BOTTOM ROW (user bowl and L/R arrows) */}
             <div className="left-arrow">⬅️</div>
             <UserBowl className="bowl bowl-cell" bowl={ bowl } style={{ gridColumnStart: bowlPosition + 1, gridRowStart: 3 }}/>
             <div className="right-arrow">➡️</div>

@@ -7,14 +7,14 @@ import Tracker from './Top/Tracker.js';
 function Grid() {
     const [bowlPosition, setBowlPosition] = useState(2);
     const [cerealBoxes, setCerealBoxes] = useState([
-        { name: 'rgba(44, 127, 200, 0.998)', amount: 100 },
-        { name: 'rgba(200, 44, 44, 0.998)', amount: 100 },
-        { name: 'rgba(44, 200, 101, 0.998)', amount: 100 },
+        { name: 'rgb(44, 127, 200)', amount: 100 },
+        { name: 'rgb(200, 44, 44)', amount: 100 },
+        { name: 'rgb(44, 200, 101)', amount: 100 },
     ]);
     const [bowl, setBowl] = useState([
-        { name: 'rgba(44, 127, 200, 0.998)', amount: 0 },
-        { name: 'rgba(200, 44, 44, 0.998)', amount: 0 },
-        { name: 'rgba(44, 200, 101, 0.998)', amount: 0 },
+        { name: 'rgb(44, 127, 200)', amount: 0 },
+        { name: 'rgb(200, 44, 44)', amount: 0 },
+        { name: 'rgb(44, 200, 101)', amount: 0 },
     ]);
 
 

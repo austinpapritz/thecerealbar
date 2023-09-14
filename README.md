@@ -34,9 +34,9 @@ _Use the arrow keys to move your bowl left and right. Press down to fill your bo
 
 ## New Features In Progress
 
-* _User can use a Tasty Token to vote for new treat products._
-* _Admin can generate a unique code that only a specific user can redeem._
-* _User can redeem code to get more Tasty Tokens._
+* _Reset button._
+* _More cereals with box art._
+* _Mini game where customers request bowls with different cereal mixes._
 
 ## Known Bugs
 

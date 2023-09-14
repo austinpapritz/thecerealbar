@@ -20,23 +20,7 @@ function Grid() {
 
     useEffect(() => {
         const handleKeyPress = (e) => {
-            if (e.key === 'ArrowLeft' && bowlPosition > 1) {
-                setBowlPosition(bowlPosition - 1);
-            } else if (e.key === 'ArrowRight' && bowlPosition < 3) {
-                setBowlPosition(bowlPosition + 1);
-            } else if (e.key === 'ArrowDown') {
-                transferCereal();
-            }
-        };
-
-        window.addEventListener('keydown', handleKeyPress);
-
-        return () => {
-            window.removeEventListener('keydown', handleKeyPress);
-        };
-    }, [bowlPosition, cerealBoxes, bowl]);
-
-    // On down arrow press
+                // On down arrow press
     const transferCereal = () => {
         // Get the cereal box above the current bowl position
         const currentBox = cerealBoxes[bowlPosition - 1];
@@ -72,6 +56,24 @@ function Grid() {
             }
         }
     };
+    
+            if (e.key === 'ArrowLeft' && bowlPosition > 1) {
+                setBowlPosition(bowlPosition - 1);
+            } else if (e.key === 'ArrowRight' && bowlPosition < 3) {
+                setBowlPosition(bowlPosition + 1);
+            } else if (e.key === 'ArrowDown') {
+                transferCereal();
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyPress);
+
+        return () => {
+            window.removeEventListener('keydown', handleKeyPress);
+        };
+    }, [bowlPosition, cerealBoxes, bowl]);
+
+
 
     return (
         <div className="grid">

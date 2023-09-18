@@ -14,6 +14,8 @@
 
 _Use the arrow keys to move your bowl left and right. Press down to fill your bowl with cereal. Keep moving and pressing down until full, the tracker will tabulate the quantities and masses of each cereal in your bowl._
 
+![Component tree for the project](./assets/CerealBar-Component-Tree.png)
+
 ## Using The Cereal Bar
 
 * _Try out The Cereal Bar in your browser now by visiting https://thecerealbar.netlify.app/_

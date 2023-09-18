@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import './UserBowl.css';
 
 const UserBowl = ({ bowl, className, style }) => {
@@ -31,6 +32,14 @@ const UserBowl = ({ bowl, className, style }) => {
 
 
     return <div className={`${className}`} style={{ ...style, background: buildBowlBackground() }}></div>;
+};
+
+UserBowl.propTypes = {
+    bowl: PropTypes.object,
+    name: PropTypes.string,
+    amount: PropTypes.number,
+    className: PropTypes.string,
+    style: PropTypes.object
 };
 
 export default UserBowl;

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import './Top.css';
 
 const Tracker = ({ bowl }) => {
@@ -7,14 +8,21 @@ const Tracker = ({ bowl }) => {
             <div className="tracker-content">
                 <h2>Totals</h2>
                 <ul>
-                    {bowl.map((c) => {
-                        return <li>{c.name}: {c.amount}g</li>
+                    {bowl.map((c, key) => {
+                        return <li key={key}>{c.name}: {c.amount}g</li>
                     })}
                 </ul>
                 <h3>Total: {totalGramsInBowl}g </h3>
             </div>
         </div>
     );
+};
+
+
+Tracker.propTypes = {
+    bowl: PropTypes.object,
+    name: PropTypes.string,
+    amount: PropTypes.number
 };
 
 export default Tracker;

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import './Top.css';
 
 const CerealBox = ({ color, amount, className }) => {
@@ -9,6 +10,12 @@ const CerealBox = ({ color, amount, className }) => {
             }}
         ></div>
     );
+};
+
+CerealBox.propTypes = {
+    color: PropTypes.string,
+    amount: PropTypes.number,
+    className: PropTypes.string,
 };
 
 export default CerealBox;
